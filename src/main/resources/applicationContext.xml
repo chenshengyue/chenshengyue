@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <import resource="spring-mybatis.xml"/>
+
+    <!--启用spring的一些annotation -->
+    <context:annotation-config/>
+
+    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
+    <!--<context:component-scan base-package="com.csy.controller">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>-->
+
+    <!-- 自动扫描该包，使SpringMVC认为包下用了@service注解的类是业务 -->
+    <!--<context:component-scan base-package="com.csy.service.impl">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+    </context:component-scan>-->
+
+    <!-- 自动扫描该包，使SpringMVC认为包下用了@Repository注解的类是业务 -->
+    <!--<context:component-scan base-package="com.csy.dao">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>-->
+
+    <context:component-scan base-package="com.csy.controller" use-default-filters="false"/>
+
+    <context:component-scan base-package="com.csy.service" use-default-filters="false"/>
+
+    <context:component-scan base-package="com.csy.dao" use-default-filters="false"/>
+
+    <mvc:annotation-driven/>
+
+    <!-- Enable AspectJ style of Spring AOP -->
+    <aop:aspectj-autoproxy/>
+
+    <bean class="com.csy.common.aop.AfterRetuenAop"/>
+
+
+</beans>
