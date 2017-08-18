@@ -3,11 +3,13 @@
  * Copyright (c) 2014-2016 All Rights Reserved.
  */
 
+import com.alibaba.fastjson.JSONArray;
 import com.csy.service.proxy.JDKProxy.JdkProxy;
 import com.csy.service.proxy.common.ProxyServiceImpl;
 import com.csy.service.proxy.common.SubjectService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  * @author chenshengyue
@@ -17,21 +19,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ProxyTest extends BaseTest {
 
     @Autowired
-    private ProxyServiceImpl proxyService;
+    @Qualifier("proxyServiceImpl")
+    private SubjectService proxyServiceImpl;
 
     @Autowired
-    private JdkProxy jdkProxy;
+    @Qualifier("proxyServiceImpl")
+    private SubjectService subjectServiceImpl;
+
+    @Autowired
+    @Qualifier("proxyServiceImpl")
+    private SubjectService proxyServiceImpl2;
 
     @Test
     public void proxyService(){
-        proxyService.add();
-        proxyService.update();
+        proxyServiceImpl.add("proxyServiceImpl");
+        proxyServiceImpl2.add("proxyServiceImpl2");
+        subjectServiceImpl.add("subjectServiceImpl");
     }
 
-    @Test
+    /*@Test
     public void jdkProxy(){
         SubjectService subjectService = (SubjectService) jdkProxy.bind(proxyService);
         subjectService.add();
         subjectService.update();
+    }*/
+
+    @Test
+    public void aVoid(){
+
+
     }
 }

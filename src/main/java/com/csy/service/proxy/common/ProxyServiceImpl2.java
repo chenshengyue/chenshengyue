@@ -9,12 +9,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
- * 代理类
  * @author chenshengyue
- * @since $Revision:1.0.0, $Date: 2017/8/14 16:30 $
+ * @since $Revision:1.0.0, $Date: 2017/8/15 11:35 $
  */
 @Service
-public class ProxyServiceImpl implements SubjectService{
+public class ProxyServiceImpl2 implements SubjectService{
 
     /*@Autowired
     private SubjectService subjectServiceImpl;*/
@@ -23,10 +22,10 @@ public class ProxyServiceImpl implements SubjectService{
     private SubjectService subjectService;
 
     public void add(String type) {
-        subjectService.add("ProxyServiceImpl");
+        subjectService.add("ProxyServiceImpl2");
     }
 
     public void update(String type) {
-        subjectService.update("ProxyServiceImpl");
+        subjectService.update("ProxyServiceImpl2");
     }
 }

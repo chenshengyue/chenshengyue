@@ -17,23 +17,23 @@
     <!--启用spring的一些annotation -->
     <context:annotation-config/>
 
-    <context:component-scan base-package="com.csy.controller">
+    <context:component-scan base-package="com.csy.controller" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <context:component-scan base-package="com.csy.service">
+    <context:component-scan base-package="com.csy.service" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
 
-    <context:component-scan base-package="com.csy.dao">
+    <context:component-scan base-package="com.csy.dao" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
     </context:component-scan>
 
-    <!--<context:component-scan base-package="com.csy.controller" use-default-filters="false"/>
+    <!--<context:component-scan base-package="com.csy.controller"/>
 
-    <context:component-scan base-package="com.csy.service" use-default-filters="false"/>
+    <context:component-scan base-package="com.csy.service"/>
 
-    <context:component-scan base-package="com.csy.dao" use-default-filters="false"/>-->
+    <context:component-scan base-package="com.csy.dao"/>-->
 
     <mvc:annotation-driven/>
 
@@ -41,6 +41,12 @@
     <aop:aspectj-autoproxy/>
 
     <bean class="com.csy.common.aop.AfterRetuenAop"/>
+
+    <!--<bean id="proxyServiceImpl" class="com.csy.service.proxy.common.ProxyServiceImpl"></bean>
+
+    <bean id="subjectServiceImpl" class="com.csy.service.proxy.common.SubjectServiceImpl"></bean>
+
+    <bean id="userServiceImpl" class="com.csy.service.impl.UserServiceImpl"></bean>-->
 
 
 </beans>

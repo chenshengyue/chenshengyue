@@ -4,6 +4,8 @@
  */
 package com.csy.service.proxy.JDKProxy;
 
+import org.springframework.stereotype.Service;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -12,7 +14,7 @@ import java.lang.reflect.Proxy;
  * @author chenshengyue
  * @since $Revision:1.0.0, $Date: 2017/8/14 17:47 $
  */
-
+@Service
 public class JdkProxy implements InvocationHandler {
 
     private Object target;

@@ -9,6 +9,7 @@ import com.csy.common.interfacebean.InterfaceBeanFactory;
 import com.csy.common.interfacebean.StateCode;
 import com.csy.model.user.User;
 import com.csy.service.UserService;
+import com.csy.service.impl.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

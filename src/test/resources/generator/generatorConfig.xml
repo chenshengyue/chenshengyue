@@ -37,7 +37,7 @@
             <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
         </table>-->
 
-        <table tableName="grade" domainObjectName="grade.Grade">
+        <table tableName="menu" domainObjectName="menu.Menu">
             <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
         </table>
 

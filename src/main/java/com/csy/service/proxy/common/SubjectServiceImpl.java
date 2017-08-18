@@ -15,11 +15,11 @@ import org.springframework.stereotype.Service;
 public class SubjectServiceImpl implements SubjectService {
 
 
-    public void add() {
-        System.out.println("SubjectServiceImpl.add");
+    public void add(String type) {
+        System.out.println(type + ".add");
     }
 
-    public void update() {
-        System.out.println("SubjectServiceImpl.update");
+    public void update(String type) {
+        System.out.println(type + ".update");
     }
 }

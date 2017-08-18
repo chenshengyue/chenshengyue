@@ -190,6 +190,19 @@
         <version>5.2.4.Final</version>
       </dependency>
 
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>3.15</version>
+      </dependency>
+
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>2.5</version>
+        <scope>provided</scope>
+      </dependency>
+
     </dependencies>
     <build>
       <finalName>spring-demo</finalName>

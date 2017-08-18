@@ -12,8 +12,8 @@ package com.csy.service.proxy.common;
 
 public interface SubjectService {
 
-    void add();
+    void add(String type);
 
-    void update();
+    void update(String type);
 
 }
