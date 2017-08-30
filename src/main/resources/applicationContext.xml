@@ -12,7 +12,16 @@
                            http://www.springframework.org/schema/aop
                            http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:properties/jdbc.properties" />
+    </bean>
+
     <import resource="spring-mybatis.xml"/>
+
+    <import resource="spring-shiro.xml"/>
+
+    <import resource="dubbo-consume.xml"/>
 
     <!--启用spring的一些annotation -->
     <context:annotation-config/>

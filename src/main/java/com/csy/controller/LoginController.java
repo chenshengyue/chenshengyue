@@ -36,10 +36,12 @@ public class LoginController extends BaseController{
     public InterfaceBean login(@RequestParam(value = "username") String username,
                                @RequestParam(value = "password") String password){
 
-        if (userService.login(username, password)){
+        if (userService.login(username, password) != null){
             return InterfaceBeanFactory.success();
         }
         return InterfaceBeanFactory.fail("用户名或者密码错误");
     }
+
+
 
 }

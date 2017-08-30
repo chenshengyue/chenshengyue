@@ -3,6 +3,7 @@
  * Copyright (c) 2014-2016 All Rights Reserved.
  */
 
+import com.csy.model.menu.Menu;
 import com.csy.service.MenuService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +22,5 @@ public class MenuTest extends BaseTest{
     public void getMenuTreeList(){
         say(menuServiceImpl.getMenuTreeList());
     }
+
 }

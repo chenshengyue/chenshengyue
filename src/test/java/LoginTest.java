@@ -20,6 +20,6 @@ public class LoginTest extends BaseTest{
 
     @Test
     public void login(){
-        System.out.println(loginController.login("493265692", "123456"));
+        say(loginController.login("493265692", "123456"));
     }
 }

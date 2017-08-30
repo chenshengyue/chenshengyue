@@ -1,6 +1,7 @@
 package com.csy.dao.mapper.user;
 
 import com.csy.model.user.User;
+import com.csy.model.user.UserAuthRo;
 import com.csy.model.user.UserConditions;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
@@ -27,4 +28,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    UserAuthRo getUserAuthByUserId(@Param("id") Integer id);
 }

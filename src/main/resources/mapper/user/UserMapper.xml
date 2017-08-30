@@ -9,6 +9,28 @@
     <result column="type" property="type" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="INTEGER" />
   </resultMap>
+
+  <resultMap id="UserAuthResultMap" type="com.csy.model.user.UserAuthRo" extends="BaseResultMap">
+    <association property="role" column="id" select="getRole"/>
+    <collection property="permissionList" ofType="com.csy.model.permission.Permission" column="id" select="getPermissionList"/>
+  </resultMap>
+
+  <select id="getRole" parameterType="int" resultMap="com.csy.dao.mapper.role.RoleMapper.BaseResultMap">
+    SELECT c.id, c.name
+    FROM asso_user_role a
+    LEFT JOIN role b ON a.role_id = b.id
+    WHERE a.id = #{id}
+  </select>
+
+  <select id="getPermissionList" parameterType="int" resultMap="com.csy.dao.mapper.permission.PermissionMapper.BaseResultMap">
+    SELECT d.id, d.name, d.permission_code
+    FROM asso_user_role a
+    LEFT JOIN role b ON a.role_id = b.id
+    LEFT JOIN asso_role_permission c ON b.id = c.role_id
+    LEFT JOIN permission d ON c.permission_id = d.id
+    WHERE a.user_id = #{id}
+  </select>
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -149,7 +171,12 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map" >
+    <select id="getUserAuthByUserId" resultMap="UserAuthResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        from user where id = #{id}
+    </select>
+    <update id="updateByExampleSelective" parameterType="map" >
     update user
     <set >
       <if test="record.id != null" >

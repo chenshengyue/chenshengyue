@@ -27,10 +27,13 @@ public class MenuSeviceImpl implements MenuService{
     @Autowired
     private MenuDao menuDaoImpl;
 
+
+    @Override
     public Boolean addMenu(Menu menu) {
         return null;
     }
 
+    @Override
     public List<MenuTreeRo> getMenuTreeList() {
         List<MenuTreeRo> list = menuDaoImpl.getTreeList();
         return TreeUtils.getChildTreeObjects(list, 0);

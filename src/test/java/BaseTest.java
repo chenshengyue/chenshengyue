@@ -29,4 +29,8 @@ public class BaseTest {
         System.out.println(JSON.toJSONString(o));
     }
 
+    public void sayT(T t){
+        System.out.println(JSON.toJSONString(t));
+    }
+
 }

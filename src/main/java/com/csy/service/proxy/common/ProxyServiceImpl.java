@@ -22,10 +22,12 @@ public class ProxyServiceImpl implements SubjectService{
     @Qualifier("subjectServiceImpl")
     private SubjectService subjectService;
 
+    @Override
     public void add(String type) {
         subjectService.add("ProxyServiceImpl");
     }
 
+    @Override
     public void update(String type) {
         subjectService.update("ProxyServiceImpl");
     }

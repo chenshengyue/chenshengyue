@@ -14,11 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class SubjectServiceImpl implements SubjectService {
 
-
+    @Override
     public void add(String type) {
         System.out.println(type + ".add");
     }
 
+    @Override
     public void update(String type) {
         System.out.println(type + ".update");
     }

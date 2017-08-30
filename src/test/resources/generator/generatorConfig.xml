@@ -37,7 +37,19 @@
             <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
         </table>-->
 
-        <table tableName="menu" domainObjectName="menu.Menu">
+        <!--<table tableName="menu" domainObjectName="menu.Menu">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>-->
+        <table tableName="asso_role_permission" domainObjectName="asso.AssoRolePermission">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table tableName="asso_user_role" domainObjectName="asso.AssoUserRole">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table tableName="permission" domainObjectName="permission.Permission">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
+        <table tableName="role" domainObjectName="role.Role">
             <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
         </table>
 

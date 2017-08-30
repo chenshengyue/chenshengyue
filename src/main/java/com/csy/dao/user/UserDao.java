@@ -4,6 +4,12 @@
  */
 package com.csy.dao.user;
 
+import com.csy.model.user.User;
+import com.csy.model.user.UserAuthRo;
+import com.csy.model.user.UserConditions;
+
+import java.util.List;
+
 /**
  * @author chenshengyue
  * @since $Revision:1.0.0, $Date: 2017/8/8 9:51 $
@@ -11,5 +17,9 @@ package com.csy.dao.user;
 
 public interface UserDao {
 
-    boolean login(String username, String password);
+    User login(String username, String password);
+
+    UserAuthRo getUserAuthByUserId(Integer id);
+
+    List<User> getByExample(UserConditions conditions);
 }
